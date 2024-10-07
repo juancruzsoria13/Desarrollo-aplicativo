@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  position: relative; 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.pinimg.com/564x/2a/29/f6/2a29f65337a8430b8602f5bb6e44f133.jpg") #000;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.form-card {
+  width: 440px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre elementos */
+  transition: transform 0.3s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-5px); /* Efecto de desplazamiento */
+}
+
+.form-card h1 {
+  font-size: 2rem; /* Tamaño del título */
+  margin-bottom: 20px;
+  color: white;
+}
+
+.form-card .input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 15px 0;
+}
+
+.form-card .input-field label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.form-card input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px; 
+}
+
+.form-card input:focus ~ label,
+.form-card input:valid ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.submit-button {
+  background-color: #ffffff;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: #fff;
+}
+
+#correct {
+  color: #06a520;
+  font-weight: bold;
+  text-align: center; /* Centrar el texto */
+}
+
+#spanError {
+  color: #fe0000;
+  font-weight: bold;
+  text-align: center; /* Centrar el texto */
+}
